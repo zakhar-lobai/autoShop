@@ -1,0 +1,153 @@
+.box {
+    width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    background-color: #000;
+    transform: translateY(-100%);
+    transition: transform 0.3s, opacity 0.3s, height 0.3s;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.header.open {
+    transform: translateY(0);
+    height: 100vh;
+    opacity: 1;
+}
+
+.header_inner {
+    display: flex;
+    padding: 12px 15px;
+    background-color: #000;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Nav Menu */
+.nav_menu {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.nav_menu li {
+    margin-left: 20px;
+}
+
+@media (max-width: 1200px) {
+    .box {
+        width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 750px;
+    }
+
+    .nav_menu {
+        padding-top: 30px;
+        flex-direction: column;
+    }
+
+    .nav_menu.open {
+        transform: translateY(0);
+        height: 100vh;
+        opacity: 1;
+    }
+    
+    .box {
+    width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    }
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+}
+
+.header_inner {
+    margin-top: 0;
+    display: flex;
+    padding: 12px 15px;
+    background-color: #000;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Nav Menu */
+.nav_menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav_menu li {
+    margin-left: 20px;
+}
+
+@media (max-width: 1200px) {
+    .box {
+        width: 970px;
+    }
+}
+
+@media (max-width: 992px) {
+    .box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .box {
+        width: 750px;
+    }
+
+    .nav_menu {
+        position: absolute;
+        top: 60px; /* Adjust this value for desired spacing */
+        right: 0;
+        background-color: #000;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav_menu.open {
+        transform: translateY(0);
+        background-color: #000;
+    }
+
+    nav.nav_menu.open {
+        background-color: #000;
+    }
+
+    .nav_menu li {
+        margin: 0;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

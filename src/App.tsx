@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, fetchData } from "../src/store/actions/dataActions";
 import "./App.css";
 import { RootState } from "./store/index";
-import NewPage from "../src/pages/NewPage/NewPage";
-import Header from "../src/pages/Header/Header";
+import OurFleet from "./pages/Our Fleet";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
 
 import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -26,14 +29,17 @@ function App() {
   console.log(data, "data");
   return (
     <div className="App">
+      <Header />
+      <Navbar />
       {/* Define routes */}
       <main>
         <Routes>
-          <Route path="/new" element={<NewPage />} />
-          <Route path="/" element={<Header />} />
+          <Route index path="/" element={<Home />} />
+          <Route path="/our-fleet" element={<OurFleet />} />
         </Routes>
       </main>
     </div>
+    
   );
 }
 

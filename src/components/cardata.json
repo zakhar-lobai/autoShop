@@ -1,0 +1,79 @@
+{
+    "img": "../assets/images/car-cards/mb1.jpg",
+    "model": "Mercedes-Benz klasa C180 W206",
+    "price": "from 233 PLN/day",
+    "year": "2021",
+    "transmission": "Automat",
+    "motor": "1.5 170 KM",
+    "fuel": "Petrol",
+    "line": "Avantgarde line",
+    "package": "Advantage package",
+    "carplay": "Apple CarPlay",
+    "android": "Android Auto",
+    "headlights": "LED headlights",
+    "seats": "Heated seats",
+    "air": "Air-conditioning",
+    "light": "Ambient Light"
+}
+{
+    "img": "../assets/images/car-cards/5g30.jpg",
+    "model": "BMW Series 5 G30 520d X-Drive",
+    "price": "from 283 PLN/day",
+    "spec": {
+        "2021",
+        "Automat",
+        "2.0 190 KM",
+        "Diesel", 
+        "M-Sport package", 
+        "X-Drive 4x4", 
+        "Apple CarPlay", 
+        "Android Auto", 
+        "LED headlights", 
+        "Heated seats", 
+        "Air-conditioning", 
+        "Ambient Light"
+    }
+    "year": "2021",
+    "transmission": "Automat",
+    "motor": "2.0 190 KM",
+    "fuel": "Diesel",
+    "package": "M-Sport package",
+    "line": "X-Drive 4x4",
+    "carplay": "Apple CarPlay", 
+    "android": "Android Auto",
+    "headlights": "LED headlights",
+    "seats": "Heated seats",
+    "air": "Air-conditioning",
+    "light": "Ambient Light"
+}
+{
+    "img": "../assets/images/car-cards/e220d.jpg",
+    "model": "Mercedes-Benz klasa E220d Exclusive",
+    "price": "from 283 PLN/day",
+    "year": "2020",
+    "transmission": "Automat",
+    "motor": "2.0 190 KM",
+    "fuel": "Diesel",
+    "line": "Navigation",
+    "package": "Exclusive package",
+    "headlights": "Adaptive LED headlights",
+    "air": "3-zone air-conditioning",
+    "light": "Ambient Light"
+}
+{
+    "img": "../assets/images/car-cards/x3facelift.jpg",
+    "model": "BMW X3 Facelift",
+    "price": "from 283 PLN/day",
+    "year": "2022",
+    "transmission": "Automat",
+    "motor": "2.0 190 KM",
+    "fuel": "Diesel",
+    "package": "M-Sport package",
+    "line": "X-Drive 4x4",
+    "carplay": "Apple CarPlay",
+    "android": "Android Auto",
+    "headlights": "LED headlights",
+    "seats": "Heated seats",
+    "air": "Air-conditioning",
+    "light": "Ambient Light"
+}
