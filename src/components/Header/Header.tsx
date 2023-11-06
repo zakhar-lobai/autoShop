@@ -6,7 +6,7 @@ import Email from '../../assets/icons/email.svg';
 import Phone from '../../assets/icons/phone.svg';
 import "../../styles/header.css";
 
-const Nav = () => {
+const Header = () => {
   const Links = [
     { name: "Our fleet", link: "/" },
     { name: "Rental with a driver", link: "/" },
@@ -61,4 +61,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Header;
