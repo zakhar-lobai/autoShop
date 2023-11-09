@@ -1,4 +1,4 @@
-import Header from '../components/Header/Header';
+import Header from "../components/Navbar";
 import Button from '../components/Button/Button';
 import { useFormik } from 'formik';
 import * as yup from 'yup';

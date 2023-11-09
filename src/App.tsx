@@ -4,8 +4,7 @@ import { AppDispatch, fetchData } from "../src/store/actions/dataActions";
 import "./App.css";
 import { RootState } from "./store/index";
 import OurFleet from "./pages/Our Fleet";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer";
+import Header from "./components/Navbar";
 import Home from "./pages/Home";
 
 import { Route, Routes } from "react-router-dom";

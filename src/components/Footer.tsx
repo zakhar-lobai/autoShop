@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row xl:w-desk mx-auto md:flex-no-wrap md:space-between">
             <div className="w-full md:w-41">
               <div className="footer_content text-left ">
-                <h5 className="mb-15 text-xl  font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30">
+                <h5 className="mb-15 text-xl font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30">
                   About us
                 </h5>
                 <p className="md:font-medium text-base leading-p-base w-97">
