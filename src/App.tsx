@@ -8,7 +8,6 @@ import Header from "./components/Navbar";
 import Home from "./pages/Home";
 
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -29,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Navbar />
+
       {/* Define routes */}
       <main>
         <Routes>

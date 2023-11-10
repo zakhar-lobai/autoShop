@@ -7,13 +7,15 @@ module.exports = {
         'yellow': '#D8B074',
         'greyc': '#959595',
         'primary': '#D8B074',
-        'black': '#000'
+        'black': '#000',
+        'base': '#222222',
       },
       borderWidth: {
         'w05': '0.5px',
       },
       spacing: {
         '1': '1px',
+        '5': '5px',
         '10': '10px',
         '15': '15px',
         '20': '20px',
@@ -31,6 +33,7 @@ module.exports = {
       },
       fontSize: {
         'base': '14px',
+        '25': '25px',
       },
       lineHeight: {
         'p-base': '22.7px'

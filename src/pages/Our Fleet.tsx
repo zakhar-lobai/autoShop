@@ -3,6 +3,7 @@ import Button from '../components/Button/Button';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import useToggle from '../hooks/useToggle';
+import Footer from "../components/Footer";
 
 const NewPage: React.FC = () => {
   const [isTextVisible, toggleText] = useToggle();
@@ -23,7 +24,7 @@ const NewPage: React.FC = () => {
   });
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-base min-h-screen">
       <Header />
       <div className="container mx-auto mt-12 p-6 bg-white rounded shadow-md">
         <h1 className="text-3xl mb-4 font-semibold text-indigo-600">Welcome to the New Page</h1>
@@ -81,6 +82,7 @@ const NewPage: React.FC = () => {
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };

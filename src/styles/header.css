@@ -115,6 +115,11 @@
 }
 
 @media (max-width: 768px) {
+    .burger_drop {
+        height: 100vh;
+        z-index: 3;
+    }
+
     .box {
         width: 750px;
     }
@@ -151,3 +156,4 @@
         padding-right: 15px;
     }
 }
+
