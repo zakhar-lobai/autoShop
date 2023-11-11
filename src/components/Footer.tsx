@@ -18,10 +18,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row xl:w-desk mx-auto md:flex-no-wrap md:space-between">
             <div className="w-full md:w-41">
               <div className="footer_content text-left ">
-                <h5 className="mb-15 text-xl  font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30">
+                <h5 className="mb-15 text-xl font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30">
                   About us
                 </h5>
-                <p className="md:font-medium text-base leading-p-base w-97">
+                <p className="text-white md:font-medium text-base leading-p-base w-97">
                   We provide access to a wide fleet of diverse premium cars. We
                   also offer many different services connected with transport
                   using cars or minibuses. We are not limited by a constant
@@ -91,7 +91,7 @@ const Footer = () => {
                       office@blackcars.pl
                     </a>
                   </li>
-                  <li className="mt-15 mb-20">
+                  <li className="mt-15 mb-20 text-white">
                     Bokserska 64/127,<br></br>02-690 Warszawa
                   </li>
                 </ul>
