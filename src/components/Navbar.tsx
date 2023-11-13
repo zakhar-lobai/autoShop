@@ -19,7 +19,7 @@ const Navbar = () => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-black w-full fixed top-0 left-0">
+    <div className="bg-black w-full fixed top-0 left-0 z-999">
       <div className="md:flex xl:w-desk mx-auto items-center justify-between py-4 md:px-10 px-15">
         {/* logo section */}
         <div className="logo">

@@ -12,3 +12,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.underline-width-125 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  width: 125px;
+}
+
+.underline-width-125::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #D8B074;
+}
+
+
+
+
+
