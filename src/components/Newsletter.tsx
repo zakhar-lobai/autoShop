@@ -5,7 +5,7 @@ const Newsletter = () => {
     <div className="px-0 text-white pl-15 pr-15 md:mt-38 md:px-15">
       <div className="xl:w-desk mx-auto mb-15 mt-50px flex flex-col md:flex-row bg-box-grey md:mb-100 md:mt-0">
         <div className="md:w-41 px-0">
-          <img src={Image} alt="" />
+          <img className="h-full object-cover" src={Image} alt="" />
         </div>
 
         <div className="bg-box-grey flex flex-col w-full pt-15 pl-20 pr-20 pb-30 md:w-58p md:pt-50 md:pl-50 md:pb-50">
