@@ -1,5 +1,5 @@
 import React from 'react'
-import Check from "../assets/images/check.png"
+import Check from "../../assets/images/check.png"
 import WhyWeCarousel from "./WhyWeCarousel";
 
 const WhyWe = () => {

@@ -8,6 +8,8 @@ import Header from "./components/Navbar";
 import Home from "./pages/Home";
 
 import { Route, Routes } from "react-router-dom";
+import Contact from "./pages/Contact";
+import SpecialOffer from "./pages/SpecialOffer";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -34,6 +36,8 @@ function App() {
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/our-fleet" element={<OurFleet />} />
+          <Route path="/special-offer" element={<SpecialOffer />} />
+          <Route path="/contact" element={<Contact />} /> 
         </Routes>
       </main>
     </div>

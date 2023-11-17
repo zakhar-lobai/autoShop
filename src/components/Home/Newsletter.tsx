@@ -1,4 +1,4 @@
-import Image from "../assets/images/newsletter.png";
+import Image from "../../assets/images/newsletter.png";
 
 const Newsletter = () => {
   return (

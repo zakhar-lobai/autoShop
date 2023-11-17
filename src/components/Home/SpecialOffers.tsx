@@ -1,4 +1,4 @@
-import Picture from "../assets/images/special-offer.png";
+import Picture from "../../assets/images/special-offer.png";
 
 const SpecialOffers = () => {
   return (

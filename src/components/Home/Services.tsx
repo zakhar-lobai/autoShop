@@ -1,7 +1,7 @@
-import Airtransfer from "../assets/images/airport-transfer.jpg";
-import Minibus from "../assets/images/minibus.jpg";
-import Limo from "../assets/images/limo.jpg";
-import Wedding from "../assets/images/wedding-car.jpg";
+import Airtransfer from "../../assets/images/airport-transfer.jpg";
+import Minibus from "../../assets/images/minibus.jpg";
+import Limo from "../../assets/images/limo.jpg";
+import Wedding from "../../assets/images/wedding-car.jpg";
 
 const Services = () => {
   return (

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const About = () => {
   return (
     <div className="px-0 text-white pb-25 pl-15 pr-15 md:pt-70 md:pb-10">

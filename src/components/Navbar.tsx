@@ -11,9 +11,9 @@ const Navbar = () => {
   let Links = [
     { name: "Our fleet", link: "/our-fleet" },
     { name: "Rental with a driver", link: "/" },
-    { name: "Special offers", link: "/" },
+    { name: "Special offers", link: "/special-offer" },
     { name: "Services", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "Contact", link: "/contact" },
   ];
 
   let [open, setOpen] = useState(false);

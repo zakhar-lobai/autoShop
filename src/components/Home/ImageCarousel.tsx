@@ -1,22 +1,22 @@
 import React, { Component, CSSProperties, MouseEventHandler } from "react";
 import Slider from "react-slick";
 
-import Img1 from "../assets/images/partners/samyoung.png";
-import Img2 from "../assets/images/partners/concierge.png";
-import Img3 from "../assets/images/partners/dinamo.png";
-import Img4 from "../assets/images/partners/intercontinental.png";
-import Img5 from "../assets/images/partners/kyivstar.png";
-import Img6 from "../assets/images/partners/marykay.png";
-import Img7 from "../assets/images/partners/ukrzaliz.png";
-import Img8 from "../assets/images/partners/sunevents.png";
-import Img9 from "../assets/images/partners/mata.png";
-import Img10 from "../assets/images/partners/vpiska.png";
-import Img11 from "../assets/images/partners/fozzy.png";
-import Img12 from "../assets/images/partners/novapost.png";
-import Img13 from "../assets/images/partners/soiitz.png";
+import Img1 from "../../assets/images/partners/samyoung.png";
+import Img2 from "../../assets/images/partners/concierge.png";
+import Img3 from "../../assets/images/partners/dinamo.png";
+import Img4 from "../../assets/images/partners/intercontinental.png";
+import Img5 from "../../assets/images/partners/kyivstar.png";
+import Img6 from "../../assets/images/partners/marykay.png";
+import Img7 from "../../assets/images/partners/ukrzaliz.png";
+import Img8 from "../../assets/images/partners/sunevents.png";
+import Img9 from "../../assets/images/partners/mata.png";
+import Img10 from "../../assets/images/partners/vpiska.png";
+import Img11 from "../../assets/images/partners/fozzy.png";
+import Img12 from "../../assets/images/partners/novapost.png";
+import Img13 from "../../assets/images/partners/soiitz.png";
 // Icons
-import Prev from "../assets/images/before.png";
-import Next from "../assets/images/next.png";
+import Prev from "../../assets/images/before.png";
+import Next from "../../assets/images/next.png";
 
 interface ArrowProps {
   className?: string;

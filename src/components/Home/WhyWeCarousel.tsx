@@ -1,10 +1,10 @@
 import React, { Component, CSSProperties, MouseEventHandler } from "react";
 import Slider from "react-slick";
 
-import Check from "../assets/images/check.png"
+import Check from "../../assets/images/check.png"
 // Icons
-import Prev from "../assets/images/before.png";
-import Next from "../assets/images/next.png";
+import Prev from "../../assets/images/before.png";
+import Next from "../../assets/images/next.png";
 
 interface ArrowProps {
   className?: string;
