@@ -5,7 +5,7 @@ import Wedding from "../../assets/images/wedding-car.jpg";
 
 const Services = () => {
   return (
-    <div className="px-0 mt-100 text-white pt-25 pl-15 pr-15 md:pt-30 md:px-15">
+    <div className="px-0 mt-30 md:mt-50px text-white pt-25 pl-15 pr-15 md:pt-30 md:px-15">
       <div className="xl:w-desk mx-auto">
         <h2 className="mb-30 text-22 md:text-35 text-left font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-20 md:mt-0">
           Our services

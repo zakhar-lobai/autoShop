@@ -1,8 +1,8 @@
 const About = () => {
   return (
     <div className="px-0 text-white pb-25 pl-15 pr-15 md:pt-70 md:pb-10">
-      <div className="xl:w-desk mx-auto border-l-4 border-yellow pl-10">
-        <h3 className="w-full text-left text-25 font-medium pb-25">
+      <div className="xl:w-desk mx-auto border-l-4 border-yellow pl-10 mb-30">
+        <h3 className="mt-50px w-full text-left text-25 font-medium pb-25 md:mt-0">
             Premium car rental in Victoria
         </h3>
         <p className="text-white text-left md:font-normal text-base leading-p-base pb-25">

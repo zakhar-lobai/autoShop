@@ -2,7 +2,7 @@ import Picture from "../../assets/images/special-offer.png";
 
 const SpecialOffers = () => {
   return (
-    <div className="px-0 mt-15 text-white pt-25 pl-15 pr-15 md:pt-70 md:mt-0 md:px-15">
+    <div className="px-0 mt-15 text-white pt-50px pl-15 pr-15 md:pt-70 md:mt-0 md:px-15">
       <div className="xl:w-desk mx-auto mb-15 md:mb-0">
         <h2 className="mb-25 text-22 md:text-35 text-left font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-45 md:mt-0">
           Special offers

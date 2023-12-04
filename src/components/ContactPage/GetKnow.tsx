@@ -6,9 +6,13 @@ const GetKnow = () => {
     <div className="mt-50px px-0 text-white pl-15 pr-15 md:pt-72px md:px-15">
       <div className="xl:w-desk mx-auto">
         <div className="flex flex-col-reverse pb-35px md:flex-row md:pb-85px">
+
+          {/* Image Section */}
           <div className="w-full md:w-50">
             <img src={Img} alt="" />
           </div>
+
+          {/* Info Section */}
           <div className="w-full md:w-50 md:pl-30">
             <h2 className="mb-20 text-22 md:text-35 text-left font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-38 md:mt-0">
               Get to know us
@@ -29,6 +33,7 @@ const GetKnow = () => {
               experience at an affordable price.
             </p>
           </div>
+          
         </div>
       </div>
     </div>

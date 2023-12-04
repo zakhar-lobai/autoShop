@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="border-t-w05 border-b-w05 border-greyc pt-45 pb-30 pl-15 pr-15 md:pt-30 pr-100 pb-45 pl-100 md:pt-30 pb-45 md:px-15">
           <div className="flex flex-col md:flex-row xl:w-desk mx-auto md:flex-no-wrap md:space-between">
             <div className="w-full md:w-41">
-              <div className="footer_content text-left ">
+              <div className=" text-left ">
                 <h5 className="mb-15 text-xl font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30">
                   About us
                 </h5>
@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
 
             <div className="w-full mt-30 ml-0 md:w-1/6 md:ml-three md:mt-0">
-              <div className="footer_content text-left">
+              <div className="text-left">
                 <h5 className="mb-15 text-xl font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30 mt-0">
                   Menu
                 </h5>
@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
 
             <div className="w-full mt-30 ml-0 md:w-1/6 md:mt-0 md:ml-four">
-              <div className="footer_content text-left ">
+              <div className="text-left ">
                 <h5 className="mb-15 text-xl font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30 md:mt-0">
                   Information
                 </h5>
@@ -76,7 +76,7 @@ const Footer = () => {
             </div>
 
             <div className="w-full mt-30 ml-0 md:w-1/6 md:mt-0 md:mb-0 md:ml-four">
-              <div className="footer_content text-left">
+              <div className="text-left">
                 <h5 className="mb-15 text-xl font-bold leading-10 pl-10 border-l-4 border-yellow md:mb-30 md:mt-0">
                   Contact
                 </h5>

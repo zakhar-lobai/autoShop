@@ -10,11 +10,17 @@ const Map = () => {
   return (
     <div className="mt-100 pt-30 px-0 text-white pl-15 pr-15 md:pt-72px md:px-15">
       <div className="xl:w-desk mx-auto mb-15 md:mb-0">
+
+        {/* Heading */}
         <h2 className="mb-15 text-22 md:text-35 text-left font-bold leading-10">
           Contact details
         </h2>
         <div className="w-85px h-4 bg-primary"></div>
+
+        {/* Main Section */}
         <div className="flex flex-col md:flex-row">
+
+          {/* Contact Details */}
           <div className="w-full pr-15  flex flex-col pt-35px gap-20 md:pr-100 md:w-1/2 ">
             <div className="flex float-left">
               <img className="object-contain pr-30" src={Pin} alt="Location" />
@@ -69,6 +75,8 @@ const Map = () => {
               </a>
             </div>
           </div>
+
+          {/* Map */}
           <div className="w-full md:w-1/2">
             <iframe
               title="Your IFrame"
@@ -79,7 +87,9 @@ const Map = () => {
               allowFullScreen
             ></iframe>
           </div>
+
         </div>
+        
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ module.exports = {
       },
       borderWidth: {
         'w05': '0.5px',
+        'w1': '1px',
       },
       spacing: {
         '1': '1px',
@@ -37,12 +38,15 @@ module.exports = {
         '50px': '50px',
         '55px': '55px',
         '58p': '58.33333333%;',
+        '60px': '60px',
         '70': '70px',
         '72px': '72px',
         '80': '80px',
         '85p': '85%',
         '85px': '85px',
         '100': '100px',
+        '120px': '120px',
+        '150px': '150px',
         '190': '190px',
         '210px': '210px',
         'one': '1%',
@@ -50,6 +54,7 @@ module.exports = {
         'four': '4%',
       },
       width: {
+        '16': '16%',
         '16per': '16.6666667%',
         'desk': '1240px',
         '41': '41.66666667%',
@@ -58,14 +63,20 @@ module.exports = {
         '50': '50%',
         '58per': '58.33333333%',
         '85px': '85px',
+        '85per': '85%',
         '125': '125px',
         '130px': '130px',
+        '140px': '140px',
+        '170px': '170px',
         '200px': '200px'
       },
       height: {
         '4': '4px',
+        '48vw': '48vw',
         '50px': '50px',
+        '90vw': '90vw',
         '150px': '150px',
+        '170px': '170px',
       },
       fontSize: {
         'small': '12px',
@@ -74,10 +85,15 @@ module.exports = {
         '21': '21px',
         '22': '22px',
         '25': '25px',
+        '30': '30px',
         '35': '35px',
+        '45': '45px',
       },
       lineHeight: {
         'p-base': '22.7px'
+      },
+      backgroundImage: {
+        'ourfleet-specialoffers': "url('/src/assets/images/our-fleet/special-offers.png')",
       }
     },
   },

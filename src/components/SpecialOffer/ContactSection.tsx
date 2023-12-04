@@ -1,4 +1,12 @@
 import React from "react";
+import { Formik, Field, Form, FormikHelpers } from 'formik';
+
+interface Values {
+  firstName: string;
+  phoneNumber: string;
+  email: string;
+  message: string;
+}
 
 const ContactSection = () => {
   return (
@@ -16,48 +24,42 @@ const ContactSection = () => {
         </h4>
 
         {/* Contact Form */}
-        <form className="flex flex-col w-full mb-50px md:mb-100" action="">
+        <Formik initialValues={{ firstName: '', phoneNumber: '', email: '', message: '',}}
+        onSubmit={(
+          values: Values,
+          { setSubmitting }: FormikHelpers<Values>
+        ) => {
+          setTimeout(() => {
+            alert(JSON.stringify(values, null, 2));
+            setSubmitting(false);
+          }, 500);
+        }}
+      >
+        <Form className="flex flex-col w-full mb-50px md:mb-100">
           <div className="flex flex-col md:flex-row md:mb-20">
-            {/* Name */}
-            <input
-              className="bg-box-grey w-full mb-15 md:w-1/3 md:mb-0 md:mr-20 px-10 py-15"
-              type="text"
-              id="name"
-              placeholder="Your Name"
-            />
+            {/* First Name */}
+            <Field className="bg-box-grey w-full mb-15 md:w-1/3 md:mb-0 md:mr-20 px-10 py-15" id="firstName" name="firstName" placeholder="Your Name" />
 
             {/* Phone Number */}
-            <input
-              className="bg-box-grey w-full mb-15 md:w-1/3 md:mb-0 md:mr-20 px-10 py-15"
-              type="phone"
-              id="phone"
-              placeholder="Phone Number"
-            />
+            <Field className="bg-box-grey w-full mb-15 md:w-1/3 md:mb-0 md:mr-20 px-10 py-15" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" />
 
             {/* Email */}
-            <input
-              className="bg-box-grey w-full mb-15 md:w-1/3 md:mb-0 px-10 py-15"
-              type="email"
-              placeholder="Email"
-            />
+            <Field className="bg-box-grey w-full mb-15 md:w-1/3 md:mb-0 px-10 py-15" id="email" name="email" placeholder="Email" type="email" />
           </div>
 
           {/* Message */}
-          <textarea
-            className="bg-box-grey w-full mb-15 md:mr-15 mb-30 px-10 py-15"
-            name="message"
+          <textarea className="bg-box-grey w-full mb-15 md:mr-15 mb-30 px-10 py-15"
             id="message"
+            name="message"
             placeholder="Enter your message"
             rows={5}
-          ></textarea>
-
-          {/* Button */}
-          <input
-            className="bg-primary md:mx-auto font-bold w-full md:w-200px h-50px text-base py-18 md:py-1 ml-left mr-left text-base p-sm  hover:bg-btn-hover hover:text-white duration-300"
-            type="submit"
-            value="SEND"
           />
-        </form>
+
+          <button className="bg-primary md:mx-auto font-bold w-full md:w-200px h-50px text-base py-18 md:py-1 ml-left mr-left text-base p-sm  hover:bg-btn-hover hover:text-white duration-300" type="submit">Submit</button>
+          
+        </Form>
+      </Formik>
+
       </div>
     </div>
   );
