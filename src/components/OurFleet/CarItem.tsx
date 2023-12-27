@@ -35,7 +35,7 @@ interface CarItemProps {
                             <div className='w-full md:w-1/3'>
                                 <Link to={car.pageUrl}>
                                     <a href={car.pageUrl}>
-                                        <img className='h-full object-center object-cover' src={require(`../../assets/images/our-fleet/${car.images}`)} alt={car.name} />
+                                        <img className='h-250px w-full md:h-full object-center object-cover' src={require(`../../assets/images/our-fleet/${car.images}`)} alt={car.name} />
                                     </a>
                                 </Link>
                                 

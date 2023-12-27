@@ -77,6 +77,7 @@ module.exports = {
         '90vw': '90vw',
         '150px': '150px',
         '170px': '170px',
+        '250px': '250px',
       },
       fontSize: {
         'small': '12px',
