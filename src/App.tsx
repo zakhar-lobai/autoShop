@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+// Data from database
+import { db } from "./lib/firebase";
+import { collection, getDocs } from "firebase/firestore";
 import { AppDispatch, fetchData } from "../src/store/actions/dataActions";
 import "./App.css";
 import { RootState } from "./store/index";
@@ -14,9 +17,28 @@ import CarDetails from "./pages/CarPage";
 import CarPage from "./pages/CarPage";
 import CarBooking from "./pages/CarBooking";
 import RentalWithDriver from "./pages/RentalWithDriver";
+import SingleCar from "./pages/SingleCar";
+
+interface CarType {
+  id?: string;
+  carName?: string;
+  carId: string;
+  pageUrl?: string;
+}
 
 function App() {
-  
+  const [cars, setCars] = useState<CarType[]>([]);
+
+  const fetchCars = async () => {
+    const carsCollection = collection(db, 'cars');
+    const carsSnapshot = await getDocs(carsCollection);
+    return carsSnapshot.docs.map((doc) => ({ carId: doc.id, ...doc.data() } as CarType));
+  };
+
+  useEffect(() => {
+    fetchCars().then((data) => setCars(data));
+  }, []);
+
   return (
     <div className="App">
       <Header />
@@ -31,8 +53,13 @@ function App() {
           <Route path="/contact" element={<Contact />} /> 
           <Route path="/:slug" element={<CarPage />} />
           <Route path="/:slug/booking" element={<CarBooking />} />
-          
-          
+          {cars.map((car) => (
+            <Route
+              key={car.id}
+              path={`${car.pageUrl}`}
+              element={<SingleCar carId={car.carId} />}
+            />
+          ))}
         </Routes>
       </main>
     </div>
@@ -40,10 +67,8 @@ function App() {
   );
 }
 
-export default App;
+const SingleCarWrapper: React.FC<{ car: CarType }> = ({ car }) => {
+  return <SingleCar carId={car.carId} />;
+};
 
-interface Car {
-  id: string;
-  name: string;
-  // ... other properties
-}
+export default App;
