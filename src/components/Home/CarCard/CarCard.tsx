@@ -21,7 +21,7 @@ const CarCard = () => {
                             <div className='w-full md:w-1/3'>
                                 <Link to={car['page-url']}>
                                     <a href={car['page-url']}>
-                                        <img className='h-full object-center object-cover' src={require(`../../../assets/images/car-cards/${car.img}`)} alt={car.name} />
+                                        <img className='h-[200px] md:h-full object-center object-cover w-full' src={require(`../../../assets/images/car-cards/${car.img}`)} alt={car.name} />
                                     </a>
                                 </Link>
                                 
@@ -46,7 +46,7 @@ const CarCard = () => {
                             
                             {/* Price, CarPage Button, Book Button (Right Section) */}
                             <div className='w-full pt-10 md:w-16per md:pt-30 pl-15 pr-15 pb-30 md:pl-0'>
-                                <h4 className='text-yellow font-bold mb-15 md:float-left text-21 md:mb-55px'>{car.price}</h4>
+                                <h4 className='text-yellow font-bold mb-[25px] md:float-left text-21 mt-[15px] mt-0 md:mb-55px'>{car.price}</h4>
                                 
                                 {/* Car Page Button */}
                                 <Link to={car['page-url']} className='border border-white w-full py-20 inline-block mb-20 transition duration-300 ease-in-out md:mb-0 hover:bg-yellow hover:border-yellow hover:color-base'>

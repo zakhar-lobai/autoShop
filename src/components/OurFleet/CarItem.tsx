@@ -36,7 +36,7 @@ const CarItem = () => {
                 <Link to={car.pageUrl}>
                   <a href={car.pageUrl}>
                     <img
-                      className="h-full object-center object-cover"
+                      className="h-[200px] md:h-full object-center object-cover w-full"
                       src={require(
                         `../../assets/images/our-fleet/${car.images}`,
                       )}
@@ -78,7 +78,7 @@ const CarItem = () => {
 
               {/* Price, CarPage Button, Book Button (Right Section) */}
               <div className="w-full pt-10 md:w-16per md:pt-30 pl-15 pr-15 pb-30 md:pl-0">
-                <h4 className="text-yellow font-bold mb-15 md:float-left text-21 md:mb-55px">
+                <h4 className="text-yellow font-bold mb-[25px] md:float-left text-21 mt-[15px] mt-0 md:mb-55px">
                   {car.price}
                 </h4>
 
