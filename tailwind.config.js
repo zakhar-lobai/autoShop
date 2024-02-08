@@ -12,6 +12,8 @@ module.exports = {
         'box-grey': '#3E3E3E',
         'btn-hover': '#5E5E5E',
         'form-bg': '#515151',
+        'days': '#353535',
+        'prices': '#2D2C2C',
       },
       borderWidth: {
         'w05': '0.5px',
@@ -77,7 +79,6 @@ module.exports = {
         '90vw': '90vw',
         '150px': '150px',
         '170px': '170px',
-        '250px': '250px',
       },
       fontSize: {
         'small': '12px',
@@ -95,6 +96,7 @@ module.exports = {
       },
       backgroundImage: {
         'ourfleet-specialoffers': "url('/src/assets/images/our-fleet/special-offers.png')",
+        'singlecar-promo': "url('/src/assets/images/singlecarpromo.png')",
       }
     },
   },

@@ -1,0 +1,49 @@
+footer a {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.41px;
+    color: #FFFFFF;
+}
+
+footer a:hover {
+    color: #D8B074;
+    transition: 0.3s;
+}
+
+
+.footer_social_links {
+    display: flex;
+}
+
+.footer_social_links li {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #d8b074;
+    border-radius: 20px;
+    text-align: center;
+    background: #D8B074;
+    margin: 12px 8% 0px 0px;
+}
+
+.social_icon {
+    font-size: 19px;
+    color: #FFFFFF;
+    line-height: 26px;
+}
+
+.social_icon:hover {
+    transition: 0.3s;
+    color: #333;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    footer a {
+        font-weight: 400;
+    }
+    
+    .footer_social_links li {
+        margin: 0 3% 0 0 ;
+    }
+}

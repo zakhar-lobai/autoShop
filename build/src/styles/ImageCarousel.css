@@ -1,0 +1,40 @@
+/* In your styles or as a separate CSS file */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    flex: 0 0 25%; /* 4 images per row on desktop */
+  }
+  
+  @media (max-width: 767px) {
+    .slide {
+      flex: 0 0 50%; /* 2 images per row on mobile */
+    }
+  }
+  
+  
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .active {
+    opacity: 1;
+  }
+  

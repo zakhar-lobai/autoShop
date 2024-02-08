@@ -21,9 +21,37 @@ import SingleCar from "./pages/SingleCar";
 
 interface CarType {
   id?: string;
+  '1-3days'?: string;
+  '4-6days': string;
+  '7-13days'?: string;
+  '14-29days'?: string;
+  Month?: string;
+  'Monthly-limit'?: string;
+  Age?: string;
+  'Annualy-limit'?: string;
+  Booking?: string;
+  'Daily-limit'?: string;
+  Deposit?: string;
+  Description?: string;
+  'Description-more'?: string;
+  Engine?: string;
+  Features?: string[]; // Assuming Features is an array of strings
+  Insurance?: string;
+  License?: string;
+  Price?: string;
+  'Read-more1'?: string;
+  'Read-more2'?: string;
+  Service?: string;
+  Transmission?: string;
+  'Weekly-limit'?: string;
+  Year?: number;
+  images?: string[]; // Assuming images is an array of strings
+  name?: string;
+  pageUrl?: string;
+  'two-weeks-limit'?: string;
   carName?: string;
   carId: string;
-  pageUrl?: string;
+  Fuel?: string;
 }
 
 function App() {
@@ -55,8 +83,8 @@ function App() {
           <Route path="/:slug/booking" element={<CarBooking />} />
           {cars.map((car) => (
             <Route
-              key={car.id}
-              path={`${car.pageUrl}`}
+              key={car.carId}
+              path={car.pageUrl}
               element={<SingleCar carId={car.carId} />}
             />
           ))}
