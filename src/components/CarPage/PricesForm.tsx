@@ -127,7 +127,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
     <div className="">
       <form method="post" className="bg-box-grey py-[36px] px-[32px] w-full">
         
-        <h4 className="md:text-[18px] mb-[10px] md:mb-[15px] text-left font-bold">{carName}</h4>
+        <h4 className="text-[18px] mb-[10px] md:mb-[15px] text-left font-bold">{carName}</h4>
         <div className="w-[125px] h-4 bg-primary mb-[20px]"></div>
 
         {/* Pick-up Date and Time */}
@@ -139,7 +139,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
             name="pickUpDateTime"
             value={selectedPickUpDateTime}
             onChange={(e) => setPickUpDateTime(e.target.value)}
-            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none w-full'
           />
         </div>
 
@@ -152,7 +152,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
             name="returnDateTime"
             value={selectedReturnDateTime}
             onChange={(e) => setReturnDateTime(e.target.value)}
-            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none w-full'
           />
         </div>
 
