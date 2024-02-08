@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Gallery, { ReactImageGalleryItem } from 'react-image-gallery';
 import './CarPageCarousel.css'
 import Prev from '../../assets/images/before.png';
 import Next from '../../assets/images/next.png';

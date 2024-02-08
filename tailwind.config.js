@@ -14,6 +14,7 @@ module.exports = {
         'form-bg': '#515151',
         'days': '#353535',
         'prices': '#2D2C2C',
+        'forms-border': '#A2A2A2',
       },
       borderWidth: {
         'w05': '0.5px',
@@ -97,6 +98,7 @@ module.exports = {
       backgroundImage: {
         'ourfleet-specialoffers': "url('/src/assets/images/our-fleet/special-offers.png')",
         'singlecar-promo': "url('/src/assets/images/singlecarpromo.png')",
+        'singlecar-promo-mob': "url('/src/assets/images/singlecarpromo-mob.png')",
       }
     },
   },

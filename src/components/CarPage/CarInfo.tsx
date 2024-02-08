@@ -22,7 +22,7 @@ const CarInfo: React.FC<CarInfoProps> = ({ carData }) => {
       <div className="xl:w-desk mx-auto">
         <div className="flex flex-col pt-[40px] md:pt-[80px]">
           {/* Car Name */}
-          <h2 className="mb-15 text-[26px] md:text-35 text-left font-bold leading-10 md:w-1/2">
+          <h2 className="mb-15 text-[26px] md:text-35 text-left font-bold leading-10">
             {carData.carName}
           </h2>
           <div className="w-85px h-4 bg-primary mb-[30px] md:mb-0"></div>

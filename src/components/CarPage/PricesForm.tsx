@@ -1,269 +1,233 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 
 interface PricesFormProps {
+  pageUrl?: string;
   OneThreeDays?: string;
   FourSixDays?: string;
   SevenThirteenDays?: string;
   FourteenTwentyNineDays?: string;
   Month?: string;
-  Insurance?: string;
+  carName?: string;
   Deposit?: string;
-  Age?: string;
-  License?: string;
   DailyLimit?: string;
   WeeklyLimit?: string;
   TwoWeeksLimit?: string;
   MonthlyLimit?: string;
   AnnualyLimit?: string;
-  Service?: string;
-  carName?: string;
-  ReadMoreOne?: string;
-  ReadMoreTwo?: string;
+  Booking?: string;
 }
 
 const PricesForm: React.FC<PricesFormProps> = ({
-    OneThreeDays,
-    FourSixDays,
-    SevenThirteenDays,
-    FourteenTwentyNineDays,
-    Month,
-    Insurance,
-    Deposit,
-    Age,
-    License,
-    DailyLimit,
-    WeeklyLimit,
-    TwoWeeksLimit,
-    MonthlyLimit,
-    AnnualyLimit,
-    Service,
-    carName,
-    ReadMoreOne,
-    ReadMoreTwo
+  OneThreeDays = '0',
+  FourSixDays,
+  SevenThirteenDays,
+  FourteenTwentyNineDays,
+  Month,
+  carName,
+  Deposit,
+  DailyLimit,
+  WeeklyLimit,
+  TwoWeeksLimit,
+  MonthlyLimit,
+  AnnualyLimit,
+  Booking,
+  pageUrl,
 }) => {
+  const [selectedPickUpDateTime, setPickUpDateTime] = useState<string>('');
+  const [selectedReturnDateTime, setReturnDateTime] = useState<string>('');
+  const [selectedPickUpLocation, setPickUpLocation] = useState<string>('');
+  const [selectedReturnLocation, setReturnLocation] = useState<string>('');
+  const [selectedDailyPrice, setSelectedDailyPrice] = useState<number>(parseFloat(OneThreeDays || '0'));
 
-return (
-  <div className="px-0 mt-50px text-white pt-25 pl-15 pr-15 md:mt-[70px] md:px-15">
-    <div className="xl:w-desk mx-auto flex flex-col">
-      <div className='flex flex-col md:flex-row' >
-        <div className="w-full md:w-2/3 md:pr-[30px]">
-            <p className="pl-[8px] border-l-4 border-yellow mb-[30px] font-bold text-[25px] text-left">
-            Gross Prices
-            </p>
-            <div className="flex">
-            <table className="w-full border-separate border-spacing-[2px] flex flex-row md:flex-col gap-[2px] md:gap-0 text-[13px]">
-                <thead className='flex flex-row md:flex-col w-1/2 md:w-full'>
-                <tr className='flex flex-col md:flex-row gap-px w-full'>
-                    <th className="bg-days py-[24px] px-[4px] w-full md:w-1/5">
-                    1-3 DAYS
-                    </th>
-                    <th className="bg-days py-[24px] px-[4px] w-full md:w-1/5">
-                    4-6 DAYS
-                    </th>
-                    <th className="bg-days py-[24px] px-[4px] w-full md:w-1/5">
-                    7-13 DAYS
-                    </th>
-                    <th className="bg-days py-[24px] px-[4px] w-full md:w-1/5">
-                    14-29 DAYS
-                    </th>
-                    <th className="bg-days py-[24px] px-[4px] w-full md:w-1/5">1 MONTH</th>
-                </tr>
-                </thead>
-                <tbody className='flex flex-row md:flex-col w-1/2 md:w-full'>
-                <tr className='flex flex-col md:flex-row gap-px w-full'>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold w-full md:w-1/5">
-                    {OneThreeDays}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold w-full md:w-1/5">
-                    {FourSixDays}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold w-full md:w-1/5">
-                    {SevenThirteenDays}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold w-full md:w-1/5">
-                    {FourteenTwentyNineDays}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold w-full md:w-1/5">
-                    {Month}
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            </div>
+  const pickUpLocations = [
+    { label: 'Office - Bokserska 64', cost: 0 },
+    { label: 'Chopin Airport', cost: 99 },
+    { label: 'Modlin Airport', cost: 199 },
+  ];
 
-            <div className="flex flex-col md:flex-row gap-[50px] md:gap-[20px] mt-[50px]">
-            <div className="w-full md:w-1/2">
-                <p className="pl-[8px] border-l-4 border-yellow mb-[30px] font-bold text-[25px] text-left">
-                Gross Refundable Deposit
-                </p>
-                <table className="w-full border-separate border-spacing-[2px] ">
-                <thead>
-                    <tr>
-                    <th className="bg-days md:pt-[24px] md:pb-[10px] px-[6px] text-[13px] leading-[15px] h-[60px]">
-                        PAYMENT AT THE OFFICE
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td className="bg-prices text-yellow px-[4px] font-bold text-[14px] h-[60px]">
-                        {Deposit}
-                    </td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
+  // Function to get default pickup date and time (current date and 12:00 AM)
+  function getDefaultPickUpDateTime(): string {
+    const currentDate = new Date();
+    return `${currentDate.toISOString().split('T')[0]}T12:00`;
+  }
 
-            <div className="w-full md:w-1/2">
-                <p className="pl-[8px] border-l-4 border-yellow mb-[30px] font-bold text-[25px] text-left">
-                Insurance
-                </p>
-                <table className="w-full border-separate border-spacing-[2px] text-[13px]">
-                <thead>
-                    <tr>
-                    <th className="bg-days md:pt-[20px] md:pb-[10px] px-[6px] text-[13px] leading-[15px] h-[60px]">
-                        LIABILITY INSURANCE, COMPREHENSIVE INSURANCE, ACCIDENT
-                        INSURANCE
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td className="bg-prices text-yellow px-[4px] font-bold text-[14px] h-[60px]">
-                        {Insurance}
-                    </td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            </div>
+  // Function to get default return date and time (next day at 12:00 AM)
+  function getDefaultReturnDateTime(pickUpDate: Date): string {
+    const nextDay = new Date(pickUpDate);
+    nextDay.setDate(nextDay.getDate() + 1);
+    return `${nextDay.toISOString().split('T')[0]}T12:00`;
+  }
 
-            <div className="flex flex-col md:flex-row md:gap-[20px] mt-[50px]">
-            <div className="md:w-58p">
-                <p className="pl-[8px] border-l-4 border-yellow mb-[30px] font-bold text-[25px] text-left">
-                    Requirements
-                </p>
+  // Function to calculate the difference in days between two dates
+  const calculateDaysDifference = (startDate: string, endDate: string): number => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const timeDifference = end.getTime() - start.getTime();
+    const daysDifference = timeDifference / (1000 * 3600 * 24);
+    return Math.ceil(daysDifference);
+  };
 
-                <table className="w-full border-separate border-spacing-[2px] flex flex-row md:flex-col gap-[2px] text-[13px]">
-                <thead className='flex flex-row md:flex-col w-1/2 md:w-full'>
-                    <tr className='flex flex-col md:flex-row gap-px w-full'>
-                        <th className="bg-days px-[6px] text-[13px] leading-[15px] h-[60px] flex items-center justify-center md:w-1/2">
-                            MINIMUM DRIVER'S AGE
-                        </th>
-                        <th className="bg-days px-[6px] text-[13px] leading-[15px] h-[60px] flex items-center justify-center md:w-1/2">
-                            HAVING A DRIVER'S LICENSE
-                        </th>
-                    </tr>
-                </thead>
-                <tbody className='flex flex-row md:flex-col w-1/2 md:w-full'>
-                    <tr className='flex flex-col md:flex-row gap-px w-full'>
-                    <td className="bg-prices text-yellow px-[4px] font-bold text-[14px] h-[60px] flex items-center justify-center md:w-1/2">
-                        {Age}
-                    </td>
-                    <td className="bg-prices text-yellow px-[4px] font-bold text-[14px] h-[60px] flex items-center justify-center md:w-1/2">
-                        {License}
-                    </td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
+  // Function to calculate the total price
+  const calculatePrice = (): number => {
+    const days = calculateDaysDifference(selectedPickUpDateTime, selectedReturnDateTime);
 
-            <div className="md:w-[41.66666667%] mt-[50px] md:mt-0">
-                <p className="pl-[8px] border-l-4 border-yellow mb-[30px] font-bold text-[25px] text-left">
-                    24/7 Service
-                </p>
+    // Use the selected daily price
+    const pricePerDay = selectedDailyPrice;
 
-                <table className="w-full border-separate border-spacing-[2px] ">
-                <thead>
-                    <tr>
-                    <th className="bg-days px-[6px] text-[13px] leading-[15px] h-[60px]">
-                        MAINTENANCE, INSPECTIONS, TYRES
-                    </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td className="bg-prices text-yellow px-[4px] font-bold text-[14px] h-[60px]">
-                        {Service}
-                    </td>
-                    </tr>
-                </tbody>
-                </table>
-            </div>
-            </div>
+    const pickUpLocationCost = pickUpLocations.find((loc) => loc.label === selectedPickUpLocation)?.cost || 0;
+    const returnLocationCost = pickUpLocations.find((loc) => loc.label === selectedReturnLocation)?.cost || 0;
 
-            <p className="pl-[8px] border-l-4 border-yellow mb-[30px] font-bold text-[25px] text-left mt-[50px]">
-                Mileage Limit
-            </p>
+    return pricePerDay * days + pickUpLocationCost + returnLocationCost;
+  };
 
-            <div className="flex ">
-            <table className="w-full border-separate border-spacing-[2px] flex flex-row md:flex-col gap-[2px] md:gap-0 text-[13px]">
-                <thead className='flex flex-row md:flex-col w-1/2 md:w-full'>
-                <tr className='flex flex-col md:flex-row gap-px w-full'>
-                    <th className="bg-days py-[24px] px-[4px] md:w-1/5">DAILY</th>
-                    <th className="bg-days py-[24px] px-[4px] md:w-1/5">WEEKLY</th>
-                    <th className="bg-days py-[24px] px-[4px] md:w-1/5">
-                    TWO WEEKS
-                    </th>
-                    <th className="bg-days py-[24px] px-[4px] md:w-1/5">MONTHLY</th>
-                    <th className="bg-days py-[24px] px-[4px] md:w-1/5">
-                    ANNUALLY
-                    </th>
-                </tr>
-                </thead>
-                <tbody className='flex flex-row md:flex-col w-1/2 md:w-full'>
-                <tr className='flex flex-col md:flex-row gap-px w-full'>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold md:w-1/5">
-                    {DailyLimit}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold md:w-1/5">
-                    {WeeklyLimit}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold md:w-1/5">
-                    {TwoWeeksLimit}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold md:w-1/5">
-                    {MonthlyLimit}
-                    </td>
-                    <td className="bg-prices text-yellow py-[24px] px-[4px] font-bold md:w-1/5">
-                    {AnnualyLimit}
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            </div>
+  // Function to calculate the mileage limit
+  const calculateMileageLimit = (): string => {
+    const days = calculateDaysDifference(selectedPickUpDateTime, selectedReturnDateTime);
 
+    // Set default mileage limit to DailyLimit
+    let mileageLimit = DailyLimit || '';
+
+    if (days >= 7 && days <= 13) mileageLimit = WeeklyLimit || '';
+    else if (days >= 14 && days <= 29) mileageLimit = TwoWeeksLimit || '';
+    else if (days >= 30) mileageLimit = MonthlyLimit || '';
+
+    return mileageLimit;
+  };
+
+  // Function to update daily price based on the number of days
+  const updateDailyPrice = () => {
+    const days = calculateDaysDifference(selectedPickUpDateTime, selectedReturnDateTime);
+
+    if (days >= 1 && days <= 3) setSelectedDailyPrice(parseFloat(OneThreeDays || '0'));
+    else if (days >= 4 && days <= 6) setSelectedDailyPrice(parseFloat(FourSixDays || '0'));
+    else if (days >= 7 && days <= 13) setSelectedDailyPrice(parseFloat(SevenThirteenDays || '0'));
+    else if (days >= 14 && days <= 29) setSelectedDailyPrice(parseFloat(FourteenTwentyNineDays || '0'));
+    else if (days >= 30) setSelectedDailyPrice(parseFloat(Month || '0'));
+  };
+
+  useEffect(() => {
+    // Set default pickup and return date and time when the component mounts
+    setPickUpDateTime(getDefaultPickUpDateTime());
+  }, []);
+
+  useEffect(() => {
+    // Set default return date and time on pick-up date change
+    if (selectedPickUpDateTime) {
+      setReturnDateTime(getDefaultReturnDateTime(new Date(selectedPickUpDateTime)));
+    }
+  }, [selectedPickUpDateTime]);
+
+  useEffect(() => {
+    // Update the daily price when dates change
+    updateDailyPrice();
+  }, [selectedPickUpDateTime, selectedReturnDateTime]);
+
+  return (
+    <div className="">
+      <form method="post" className="bg-box-grey py-[36px] px-[32px] w-full">
+        
+        <h4 className="md:text-[18px] mb-[10px] md:mb-[15px] text-left font-bold">{carName}</h4>
+        <div className="w-[125px] h-4 bg-primary mb-[20px]"></div>
+
+        {/* Pick-up Date and Time */}
+        <div className="mt-4 w-full flex flex-col text-left">
+          <label htmlFor="pickUpDateTime" className='mb-[3px]'>Pick-up</label>
+          <input
+            type="datetime-local"
+            id="pickUpDateTime"
+            name="pickUpDateTime"
+            value={selectedPickUpDateTime}
+            onChange={(e) => setPickUpDateTime(e.target.value)}
+            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+          />
+        </div>
+
+        {/* Return Date and Time */}
+        <div className="mt-2 w-full flex flex-col text-left">
+          <label htmlFor="returnDateTime" className='mb-[3px]'>Return</label>
+          <input
+            type="datetime-local"
+            id="returnDateTime"
+            name="returnDateTime"
+            value={selectedReturnDateTime}
+            onChange={(e) => setReturnDateTime(e.target.value)}
+            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+          />
+        </div>
+
+        {/* Pick-up Location */}
+        <div className="mt-2 w-full flex flex-col text-left">
+          <label htmlFor="pickupLocation" className='mb-[3px]'>Pick-up Location:</label>
+          <select
+            value={selectedPickUpLocation}
+            onChange={(e) => setPickUpLocation(e.target.value)}
+            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+          >
             
-
-        </div>
-
-        <div className='w-full md:w-1/3 md:pl-[20px] mt-[50px]'>
-            <div className='md:w-[95%] md:float-right'>
-                <form method="post" className='bg-box-grey py-[36px] px-[32px] w-full'>
-                    <h4 className='md:text-[18px] mb-[10px] md:mb-[15px] text-left font-bold'>{carName}</h4>
-                    <div className="w-[125px] h-4 bg-primary mb-[20px]"></div>
-                    <input type="date" className='w-full' />
-                </form>
-            </div>
             
+            {pickUpLocations.map((location, index) => (
+              <option key={index} value={location.label}>{`${location.label} - ${location.cost} PLN`}</option>
+            ))}
+          </select>
         </div>
-      </div>
-
-        <div className='mb-[60px] mt-[100px] md:mb-[80px]' id='more'>
-            <h2 className="mb-15 text-[26px] md:text-35 text-left font-bold leading-10">
-                {carName}
-            </h2>
-            <div className="w-85px h-4 bg-primary mb-[40px]"></div>
-
-            <div className='border-l-[4px] border-yellow px-[10px] py-[5px] text-left'>
-                <p className='text-[14px] leading-[27px] mb-[40px] md:mb-[60px] px-[5px]'>{ReadMoreOne}</p>
-                <p className='text-[14px] leading-[27px] mb-[40px] md:mb-[60px] px-[5px]'>{ReadMoreTwo}</p>
-            </div>
+        
+        {/* Return Location */}
+        <div className="mt-2 w-full flex flex-col text-left">
+          <label htmlFor="returnLocation" className='mb-[3px]'>Return Location:</label>
+          <select
+            value={selectedReturnLocation}
+            onChange={(e) => setReturnLocation(e.target.value)}
+            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+          >
+            {pickUpLocations.map((location, index) => (
+              <option key={index} value={location.label}>{`${location.label} - ${location.cost} PLN`}</option>
+            ))}
+          </select>
         </div>
 
+        {/* Days */}
+        <div className="mt-[10px] flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-normal font-bold text-yellow">
+          <strong className='text-[14px] font-normal text-white'>Days</strong> {calculateDaysDifference(selectedPickUpDateTime, selectedReturnDateTime)}
+        </div>
+
+        {/* Price per Day */}
+        <div className="flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-bold text-yellow">
+          <strong className='text-[14px] font-normal text-white'>Price per day</strong> {selectedDailyPrice} PLN
+        </div>
+
+        {/* Refundable Deposit */}
+        <div className="flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-bold text-yellow">
+          <strong className='text-[14px] font-normal text-white'>Refundable deposit</strong> {Deposit}
+        </div>
+
+        {/* Mileage Limit */}
+        <div className="flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-bold text-yellow">
+          <strong className='text-[14px] font-normal text-white'>Total mileage limit</strong> {calculateMileageLimit()} 
+        </div>
+
+        {/* Car issue - Pick-up */}
+        <div className="flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-bold text-yellow">
+          <strong className='text-[14px] font-normal text-white text-left'>Car pick-up outside of office hours</strong>
+          {/* Adding the price here */}
+          <span>{pickUpLocations.find((loc) => loc.label === selectedPickUpLocation)?.cost || '0'} PLN</span>
+        </div>
+
+        {/* Car issue - Return */}
+        <div className="flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-bold text-yellow">
+          <strong className='text-[14px] font-normal text-white text-left'>Car return outside of office hours</strong>
+          {/* Adding the price here */}
+          <span>{pickUpLocations.find((loc) => loc.label === selectedReturnLocation)?.cost || '0'} PLN</span>
+        </div>
+
+        {/* Total Price */}
+        <div className="flex flex-row justify-between pt-[12px]  pb-[7px] border-t-[0.4px] border-forms-border text-[14px] font-bold text-yellow">
+          <strong className='text-[14px] font-normal text-white'>AMOUNT DUE</strong> {calculatePrice()} PLN
+        </div>
+
+      </form>
     </div>
-  </div>
-);
+  );
 };
 
 export default PricesForm;

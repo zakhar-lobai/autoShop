@@ -8,6 +8,7 @@ import CarInfo from '../components/CarPage/CarInfo';
 import Promo from '../components/CarPage/Promo';
 import PricesForm from '../components/CarPage/PricesForm';
 import Footer from '../components/Footer';
+import CarDatas from '../components/CarPage/CarDatas';
 
 interface CarDataInterface {
   id?: string;
@@ -87,26 +88,28 @@ const SingleCar: React.FC<SingleCarProps> = ({ carId }) => {
         <Helmet title={carData.carName ?? 'Car Not Found'}>
           <CarInfo carData={carData} />
           <Promo />
-          <PricesForm
-              OneThreeDays={carData['1-3days']}
-              FourSixDays={carData['4-6days']}
-              SevenThirteenDays={carData['7-13days']}
-              FourteenTwentyNineDays={carData['14-29days']}
-              Month={carData.Month}
-              Insurance={carData.Insurance}
-              Deposit={carData.Deposit}
-              Age={carData.Age}
-              License={carData.License}
-              DailyLimit={carData['Daily-limit']}
-              WeeklyLimit={carData['Weekly-limit']}
-              TwoWeeksLimit={carData['two-weeks-limit']}
-              MonthlyLimit={carData['Monthly-limit']}
-              AnnualyLimit={carData['Annualy-limit']}
-              Service={carData.Service}
-              carName={carData.carName}
-              ReadMoreOne={carData['Read-more1']}
-              ReadMoreTwo={carData['Read-more2']}
-            />
+          <CarDatas
+            OneThreeDays={carData['1-3days']}
+            FourSixDays={carData['4-6days']}
+            SevenThirteenDays={carData['7-13days']}
+            FourteenTwentyNineDays={carData['14-29days']}
+            Month={carData.Month}
+            Insurance={carData.Insurance}
+            Deposit={carData.Deposit}
+            Age={carData.Age}
+            License={carData.License}
+            DailyLimit={carData['Daily-limit']}
+            WeeklyLimit={carData['Weekly-limit']}
+            TwoWeeksLimit={carData['two-weeks-limit']}
+            MonthlyLimit={carData['Monthly-limit']}
+            AnnualyLimit={carData['Annualy-limit']}
+            Service={carData.Service}
+            carName={carData.carName}
+            ReadMoreOne={carData['Read-more1']}
+            ReadMoreTwo={carData['Read-more2']}
+            Booking={carData.Booking}
+            pageUrl={carData.pageUrl}
+          />
           <Footer />
         </Helmet> 
       </>
