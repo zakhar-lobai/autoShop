@@ -74,6 +74,32 @@
         "book": "/mercedes-benz-e-class-e220d/booking"
     },
     {
+        "id": "volvo-s90",
+        "images": "volvo-s90.jpg",
+        "name": "Volvo S90",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "2.0 190 HP",
+        "fuel": "Diesel",
+        "features": ["4WD", "Apple CarPlay", "Android Auto", "Adaptive LED headlights", "Heated seats"],
+        "price": "from 283 PLN/day",
+        "pageUrl": "/volvo-s90",
+        "book": "/volvo-s90/booking"
+    },
+    {
+        "id": "bmw-m3-competition",
+        "images": "bmw-m3-competition.jpg",
+        "name": "BMW M3 Competition",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "3.0 Twin Turbo 510 HP",
+        "fuel": "Gas",
+        "features": ["0-100 3.5s", "4x4 Drive", "M Drive Professional", "HiFi Harman Kardon Surround Sound", "Electrically operated tailgate", "Tinted glass", "Front seat ventilation"],
+        "price": "from 780 PLN/day",
+        "pageUrl": "/bmw-m3-competition",
+        "book": "/bmw-m3-competition/booking"
+    },
+    {
         "id": "bmw-x3",
         "images": "bmw-x3facelift.jpg",
         "name": "BMW X3 Facelift",
@@ -85,6 +111,19 @@
         "price": "from 283 PLN/day",
         "pageUrl": "/bmw-x3",
         "book": "/bmw-x3/booking"
+    },
+    {
+        "id": "porsche-macan-turbo",
+        "images": "porsche-macan-turbo.jpg",
+        "name": "Porsche Macan 2.0 Turbo",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "2.0 265 HP",
+        "fuel": "Gas",
+        "features": ["Navigation", "Air-conditioning", "Heated seats", "LED headlights", "4x4"],
+        "price": "from 400 PLN/day",
+        "pageUrl": "/porsche-macan",
+        "book": "/porsche-macan/booking"
     },
     {
         "id": "bmw-x4",
@@ -101,6 +140,32 @@
         "book": "/bmw-x4/booking"
     },
     {
+        "id": "range-rover-velar",
+        "images": "range-rover-velar.jpg",
+        "name": "Range Rover Velar",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "2.0 204 HP",
+        "fuel": "Diesel",
+        "features": ["4x4", "Apple CarPlay", "Android Auto", "Adaptive LED headlights", "Heated seats"],
+        "price": "from 467 PLN/day",
+        "pageUrl": "/range-rover-velar",
+        "book": "/range-rover-velar/booking"
+    },
+    {
+        "id": "range-rover-sport",
+        "images": "range-rover-sport.jpg",
+        "name": "Range Rover Sport",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "2.0 404 HP",
+        "fuel": "Diesel",
+        "features": ["4x4", "Apple CarPlay", "Android Auto", "Adaptive LED headlights", "Heated seats"],
+        "price": "from 467 PLN/day",
+        "pageUrl": "/range-rover-sport",
+        "book": "/range-rover-sport/booking"
+    },
+    {
         "id": "bmw-x5-30d",
         "images": "bmw-x5-30d.png",
         "name": "BMW X5 30d",
@@ -112,6 +177,71 @@
         "price": "from 533 PLN/day",
         "pageUrl": "/bmw-x5-30d",
         "book": "/bmw-x5-30d/booking"
+    },
+    {
+        "id": "mb-gle-coupe",
+        "images": "mercedes-gle-coupe.jpg",
+        "name": "Mercedes-Benz GLE Coupe",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "3.0 272 HP",
+        "fuel": "Diesel",
+        "features": ["4WD", "Apple CarPlay", "Android Auto", "Adaptive LED headlights", "Heated seats"],
+        "price": "from 557 PLN/day",
+        "pageUrl": "/mercedes-gle-coupe",
+        "book": "/mercedes-gle-coupe"
+    },
+    {
+        "id": "volvo-xc90",
+        "images": "volvo-xc90.jpg",
+        "name": "Volvo XC90",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "2.0 235 HP",
+        "fuel": "Diesel",
+        "features": ["4WD", "Apple CarPlay", "Android Auto", "Adaptive LED headlights", "Heated seats"],
+        "price": "from 500 PLN/day",
+        "pageUrl": "/volvo-xc90",
+        "book": "/volvo-xc90/booking"
+    },
+    {
+        "id": "porsche-cayenne",
+        "images": "porsche-cayenne.jpg",
+        "name": "Porsche Cayenne",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "3.0 470 HP",
+        "fuel": "Gas",
+        "features": ["Apple CarPlay", "Navigation", "Air-conditioning", "Heated seats", "LED headlights", "4x4"],
+        "price": "from 560 PLN/day",
+        "pageUrl": "/porsche-cayenne",
+        "book": "/porsche-cayenne/booking"
+    },
+    {
+        "id": "porsche-cayenne-coupe",
+        "images": "porsche-cayenne-coupe.jpg",
+        "name": "Porsche Cayenne Coupe",
+        "year": 2022,
+        "transmission": "Automatic",
+        "engine": "3.0 470 HP",
+        "fuel": "Gas",
+        "features": ["Apple CarPlay", "Navigation", "Air-conditioning", "Heated seats", "LED headlights", "4x4"],
+        "price": "from 667PLN/day",
+        "pageUrl": "/porsche-cayenne-coupe",
+        "book": "/porsche-cayenne-coupe/booking"
+    },
+    {
+        "id": "audi-rs-q3",
+        "images": "audi-rs-q3.jpg",
+        "name": "Audi RS Q3",
+        "year": 2022,
+        "transmission": "Automatic",
+        "fuel": "Gas",
+        "engine": "2.5 400 HP",
+        "features": ["Apple CarPlay", "Navigation", "Air-conditioning", "Heated seats", "LED headlights", "4x4"],
+        "price": "from 467 PLN/day",
+        "pageUrl": "/audi-rs-q3", 
+        "book": "/audi-rs-q3/booking"
     },
     {
         "id": "audi-rs-q8",
@@ -164,6 +294,19 @@
         "price": "from 1600 PLN/day",
         "pageUrl": "/porsche-911-gt3",
         "book": "/porsche-911-gt3/booking"
+    },
+    {
+        "id": "mb-v-class-long",
+        "images": "mb-v-class-long.jpg",
+        "name": "Mercedes-Benz V-Class Avantgarde Extra Long",
+        "year": 2022,
+        "transmission": "Automatic",
+        "fuel": "Diesel",
+        "engine": "2.2 120HP",
+        "features": ["7 passengers + driver", "Apple CarPlay", "Android Auto", "Ambient Light", "Dual zone automatic air conditioning", "Leather seat covers", "Double-sided electric sliding doors", "Rotating seats (face to face)"],
+        "price": "from 675 PLN/day",
+        "pageUrl": "/mercedes-benz-v-class-long",
+        "book": "/mercedes-benz-v-class-long/booking"
     }
     ]
 }
