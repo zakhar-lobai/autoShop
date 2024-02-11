@@ -139,7 +139,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
             name="pickUpDateTime"
             value={selectedPickUpDateTime}
             onChange={(e) => setPickUpDateTime(e.target.value)}
-            className='bg-box-grey p-[10px] md:p-[5px] border-[0.4px] border-forms-border rounded-none w-full min-w-full text-white mb-[10px] md:mb-0'
+            className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none w-full min-w-full text-white mb-[10px] md:mb-0'
           />
         </div>
 
@@ -152,7 +152,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
             name="returnDateTime"
             value={selectedReturnDateTime}
             onChange={(e) => setReturnDateTime(e.target.value)}
-            className='bg-box-grey p-[10px] md:p-[5px] border-[0.4px] border-forms-border rounded-none w-full min-w-full text-white mb-[10px] md:mb-0'
+            className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none w-full min-w-full text-white mb-[10px] md:mb-0'
           />
         </div>
 

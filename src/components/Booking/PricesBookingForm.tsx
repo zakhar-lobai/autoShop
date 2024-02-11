@@ -108,7 +108,7 @@ const PricesBookingForm: React.FC<PricesBookingFormProps> = ({
   }, [selectedPickUpDateTime, selectedReturnDateTime]);
 
   return (
-    <form method="post" className="bg-box-grey w-full min-w-full">
+    <form method="post" className="bg-box-grey w-full min-w-full text-left">
       <div className="mt-4 w-full flex flex-col text-left">
         <label htmlFor="pickUpDateTime" className='mb-[3px]'>Pick-up</label>
         <input
@@ -117,7 +117,7 @@ const PricesBookingForm: React.FC<PricesBookingFormProps> = ({
           name="pickUpDateTime"
           value={selectedPickUpDateTime}
           onChange={(e) => setPickUpDateTime(e.target.value)}
-          className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none min-w-full'
+          className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none min-w-full text-left'
         />
       </div>
 
@@ -129,7 +129,7 @@ const PricesBookingForm: React.FC<PricesBookingFormProps> = ({
           name="returnDateTime"
           value={selectedReturnDateTime}
           onChange={(e) => setReturnDateTime(e.target.value)}
-          className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none min-w-full'
+          className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none min-w-full text-left'
         />
       </div>
 
@@ -138,7 +138,7 @@ const PricesBookingForm: React.FC<PricesBookingFormProps> = ({
         <select
           value={selectedPickUpLocation}
           onChange={(e) => setPickUpLocation(e.target.value)}
-          className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+          className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none'
         >
           {pickUpLocations.map((location, index) => (
             <option key={index} value={location.label}>{`${location.label} - ${location.cost} PLN`}</option>
@@ -151,7 +151,7 @@ const PricesBookingForm: React.FC<PricesBookingFormProps> = ({
         <select
           value={selectedReturnLocation}
           onChange={(e) => setReturnLocation(e.target.value)}
-          className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+          className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none'
         >
           {pickUpLocations.map((location, index) => (
             <option key={index} value={location.label}>{`${location.label} - ${location.cost} PLN`}</option>
