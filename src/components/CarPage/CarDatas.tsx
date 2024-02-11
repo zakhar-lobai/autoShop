@@ -268,7 +268,7 @@ const CarDatas: React.FC<CarDatasProps> = ({
           </div>
   
           {/* Contact Form - Right Side */}
-          <div className="w-full md:w-1/3 md:ml-[20px] px-0 mt-[40px] text-white pt-25 px-15">
+          <div className="w-full md:w-1/3 md:ml-[20px] px-0 mt-[40px] text-white pt-25 md:px-15">
             <PricesForm carName={carName} Booking={Booking} Deposit={Deposit} OneThreeDays={OneThreeDays} FourSixDays={FourSixDays} SevenThirteenDays={SevenThirteenDays} FourteenTwentyNineDays={FourteenTwentyNineDays} Month={Month} DailyLimit={DailyLimit} WeeklyLimit={WeeklyLimit} TwoWeeksLimit={TwoWeeksLimit} MonthlyLimit={MonthlyLimit} pageUrl={pageUrl} />
             <div className='bg-box-grey pb-[36px] px-[32px] w-full'>
               <Link to={`${Booking}`}>

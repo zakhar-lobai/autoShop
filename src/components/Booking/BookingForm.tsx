@@ -1,9 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import CommonSection from '../UI/CommonSection';
-import Payment from './Payment';
-import PricesBookingForm from './PricesBookingForm';
 import PricesForm from '../CarPage/PricesForm';
 
 interface BookingFormProps {
@@ -90,7 +87,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
   };
 
   return (
-    <div className="px-0 mt-30 text-white pl-15 pr-15 md:mt-0 md:px-0">
+    <div className="px-0 mt-30 text-white pl-15 pr-15 md:mt-[70px] md:px-[30px] lg:px-0">
       <div className="flex flex-col mt-120px xl:w-desk mx-auto mb-15 md:mb-0 text-white md:mt-0">
         <div className="flex flex-col-reverse md:flex-row justify-between xl:w-desk mx-auto mb-[60px] md:mb-[100px] text-white md:mt-0">
           <div className="md:w-1/2">
@@ -113,7 +110,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
               onSubmit={handleSubmit}
             >
               {({ errors, touched }) => (
-                <Form className="w-full">
+                <Form className="w-full rounded-none focus:rounded-none">
                   {/* First and Last Name */}
                   <div className="w-full flex flex-col md:flex-row md:mt-[20px] gap-[15px] md:gap-[30px]">
                     {/* First Name */}
@@ -125,7 +122,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="firstName"
                         name="firstName"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] border-none rounded-none focus:border-none focus:rounded-none focus:border-transparent focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="firstName"
@@ -143,7 +140,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="lastName"
                         name="lastName"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-none focus:border-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="lastName"
@@ -154,7 +151,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                   </div>
   
                   {/* Residence Address and Postal Code */}
-                  <div className="w-full flex flex-col md:flex-row mt-[15px] md:mt-[20px] gap-[15px] md:gap-[30px]">
+                  <div className="w-full flex flex-col md:flex-row mt-[15px] md:mt-[20px] gap-[15px] md:gap-[30px] rounded-none">
                     {/* Residence Address */}
                     <div className="md:w-1/2 flex flex-col text-left">
                       <label htmlFor="address" className="pb-[3px] md:pb-[5px]">
@@ -164,7 +161,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="address"
                         name="address"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white focus:bg-base mb-[3px] rounded-none"
                       />
                       <ErrorMessage
                         name="address"
@@ -182,7 +179,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="number"
                         id="postalCode"
                         name="postalCode"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white  focus:bg-base mb-[3px] rounded-none"
                       />
                       <ErrorMessage
                         name="postalCode"
@@ -203,7 +200,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="city"
                         name="city"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="city"
@@ -221,7 +218,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="memberCode"
                         name="memberCode"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="memberCode"
@@ -245,7 +242,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="phone"
                         id="phoneNumber"
                         name="phoneNumber"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="phoneNumber"
@@ -263,7 +260,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="email"
                         id="email"
                         name="email"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="email"
@@ -287,7 +284,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="driverLicenseNumber"
                         name="driverLicenseNumber"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="driverLicenseNumber"
@@ -305,12 +302,12 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="idNumber"
                         name="idNumber"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="idNumber"
                         component="div"
-                        className="text-[12px] text-primary error "
+                        className="text-[12px] text-primary error"
                       />
                     </div>
                   </div>
@@ -326,7 +323,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="taxNumber"
                         name="taxNumber"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="taxNumber"
@@ -347,7 +344,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="number"
                         id="personalIdentityNumber"
                         name="personalIdentityNumber"
-                        className="bg-form-bg h-[35px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-[1px] focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="personalIdentityNumber"
@@ -359,7 +356,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                   <div className="flex">
                     <button
                       type="submit"
-                      className="bg-yellow w-1/2 md:w-1/3 color-base mt-[30px] py-[10px] inline-block transition duration-300 ease-in-out hover:bg-btn-hover hover:border-yellow hover:color-base"
+                      className="bg-yellow w-full md:w-1/3 color-base mt-[30px] py-[15px] inline-block transition duration-300 ease-in-out hover:bg-btn-hover hover:border-yellow hover:color-base"
                     >
                       Submit
                     </button>

@@ -65,7 +65,7 @@ const CarCard = () => {
                 </div>
 
                 {/* Our Fleet Button(Cars Page) */}
-                <a href="/our-fleet" className='w-full mt-30 bg-yellow color-base py-18 md:w-130px md:py-20 inline-block transition duration-300 ease-in-out hover:bg-btn-hover hover:border-yellow hover:color-base hover:text-white'>
+                <a href="/our-fleet" className='w-full color-white mt-30 bg-yellow color-base py-18 md:w-130px md:py-20 inline-block transition duration-300 ease-in-out hover:bg-btn-hover hover:border-yellow hover:color-base hover:text-white'>
                     <button className='text-base text-base font-bold '>See all cars</button>
                 </a>
                 

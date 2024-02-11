@@ -1,6 +1,5 @@
-import { useEffect, createContext, useState, useContext, } from "react";
+import { useEffect, createContext, useState, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// Data from database
 import { db } from "./lib/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { AppDispatch, fetchData } from "./store/actions/dataActions";
@@ -9,13 +8,13 @@ import { RootState } from "./store/index";
 import OurFleet from "./pages/OurFleet";
 import Header from "./components/Navbar";
 import Home from "./pages/Home";
-
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Contact from "./pages/Contact";
 import SpecialOffer from "./pages/SpecialOffer";
 import CarBooking from "./pages/CarBooking";
 import RentalWithDriver from "./pages/RentalWithDriver";
 import SingleCar from "./pages/SingleCar";
+import PageLoader from "./components/Preloader/PageLoader";
 
 interface CarType {
   id?: string;
@@ -28,54 +27,55 @@ interface CarType {
 function App() {
   const [cars, setCars] = useState<CarType[]>([]);
   const [bookingCars, setBookingCars] = useState<CarType[]>([]);
+  const location = useLocation();
 
-  const fetchCars = async () => {
-    const carsCollection = collection(db, 'cars');
-    const carsSnapshot = await getDocs(carsCollection);
-    return carsSnapshot.docs.map((doc) => ({ carId: doc.id, ...doc.data() } as CarType));
-  };
-
-  const fetchCarsBooking = async () => {
-    const carsCollection = collection(db, 'cars');
-    const carsSnapshot = await getDocs(carsCollection);
-    return carsSnapshot.docs.map((doc) => ({ carId: doc.id, ...doc.data() } as CarType));
-  };
 
   useEffect(() => {
-    fetchCars().then((data) => setCars(data));
+    const fetchCars = async () => {
+      const carsCollection = collection(db, "cars");
+      const carsSnapshot = await getDocs(carsCollection);
+      const data = carsSnapshot.docs.map((doc) => ({ carId: doc.id, ...doc.data() } as CarType));
+      setCars(data);
+    };
+
+    fetchCars();
   }, []);
 
   useEffect(() => {
-    fetchCarsBooking().then((data) => setBookingCars(data));
+    const fetchCarsBooking = async () => {
+      const carsCollection = collection(db, "cars");
+      const carsSnapshot = await getDocs(carsCollection);
+      const data = carsSnapshot.docs.map((doc) => ({ carId: doc.id, ...doc.data() } as CarType));
+      setBookingCars(data);
+    };
+
+    fetchCarsBooking();
   }, []);
 
   return (
     <div className="App">
+      
       <Header />
-
-      {/* Define routes */}
       <main>
-        <Routes>
-          <Route index path="/" element={<Home />} />
-          <Route path="/our-fleet" element={<OurFleet />} />
-          <Route path="/rent-with-driver" element={<RentalWithDriver />} />
-          <Route path="/special-offer" element={<SpecialOffer />} />
-          <Route path="/contact" element={<Contact />} />
-          
+        <PageLoader>
+          <Routes>
+            <Route index path="/" element={<Home />} />
+            <Route path="/our-fleet" element={<OurFleet />} />
+            <Route path="/rent-with-driver" element={<RentalWithDriver />} />
+            <Route path="/special-offer" element={<SpecialOffer />} />
+            <Route path="/contact" element={<Contact />} />
             {cars.map((car) => (
-                <Route
-                key={car.id}
-                path={`${car.pageUrl}`}
-                element={<SingleCar carId={car.carId} />}
-                />
+              <Route key={car.id} path={`${car.pageUrl}`} element={<SingleCar carId={car.carId} />} />
             ))}
             {bookingCars.map((car) => (
-                <Route key={car.id} path={`${car.pageUrl}/${car.Booking}`} element={<CarBooking carId={car.carId}/>} />
+              <Route key={car.id} path={`${car.pageUrl}/${car.Booking}`} element={<CarBooking carId={car.carId} />} />
             ))}
-          
-          
-        </Routes>
+          </Routes>
+        </PageLoader>
+        
+
       </main>
+      
     </div>
   );
 }

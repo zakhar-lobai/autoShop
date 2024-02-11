@@ -55,7 +55,7 @@ const ContactSection = () => {
             rows={5}
           />
 
-          <button className="bg-primary md:mx-auto font-bold w-full md:w-200px h-50px text-base py-18 md:py-1 ml-left mr-left text-base p-sm  hover:bg-btn-hover hover:text-white duration-300" type="submit">Submit</button>
+          <button className="bg-primary md:mx-auto font-bold w-full md:w-200px h-50px text-base text-white py-18 md:py-1 ml-left mr-left text-base p-sm  hover:bg-btn-hover hover:text-white duration-300" type="submit">Submit</button>
           
         </Form>
       </Formik>

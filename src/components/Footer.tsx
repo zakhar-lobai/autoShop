@@ -11,6 +11,7 @@ import MasterCard from "../assets/icons/mastercard.png";
 import Visa from "../assets/icons/visa.png";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="text-white">
       <div className="pl-0 pr-0">
@@ -137,7 +138,7 @@ const Footer = () => {
             <div className="flex w-full xl:w-desk mx-auto space-between">
               <div className="w-3/4 flex text-left align-center md:w-1/2 ">
                 <p>
-                  © 2023 All rights reserved. Design by –{" "}
+                  © {currentYear} All rights reserved. Design by –{" "}
                   <a href="https://https://www.kadmix.pl/">Kadmix</a>
                 </p>
               </div>

@@ -131,7 +131,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
         <div className="w-[125px] h-4 bg-primary mb-[20px]"></div>
 
         {/* Pick-up Date and Time */}
-        <div className="mt-4 w-full flex flex-col text-left">
+        <div className="mt-4 w-full flex flex-col text-left min-w-full">
           <label htmlFor="pickUpDateTime" className='mb-[3px]'>Pick-up</label>
           <input
             type="datetime-local"
@@ -139,12 +139,12 @@ const PricesForm: React.FC<PricesFormProps> = ({
             name="pickUpDateTime"
             value={selectedPickUpDateTime}
             onChange={(e) => setPickUpDateTime(e.target.value)}
-            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none w-full'
+            className='bg-box-grey p-[10px] md:p-[5px] border-[0.4px] border-forms-border rounded-none w-full min-w-full text-white mb-[10px] md:mb-0'
           />
         </div>
 
         {/* Return Date and Time */}
-        <div className="mt-2 w-full flex flex-col text-left">
+        <div className="mt-2 w-full flex flex-col text-left min-w-full">
           <label htmlFor="returnDateTime" className='mb-[3px]'>Return</label>
           <input
             type="datetime-local"
@@ -152,7 +152,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
             name="returnDateTime"
             value={selectedReturnDateTime}
             onChange={(e) => setReturnDateTime(e.target.value)}
-            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none w-full'
+            className='bg-box-grey p-[10px] md:p-[5px] border-[0.4px] border-forms-border rounded-none w-full min-w-full text-white mb-[10px] md:mb-0'
           />
         </div>
 
@@ -162,7 +162,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
           <select
             value={selectedPickUpLocation}
             onChange={(e) => setPickUpLocation(e.target.value)}
-            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+            className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none mb-[10px] md:mb-0'
           >
             
             
@@ -178,7 +178,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
           <select
             value={selectedReturnLocation}
             onChange={(e) => setReturnLocation(e.target.value)}
-            className='bg-box-grey p-[5px] border-[0.4px] border-forms-border rounded-none'
+            className='bg-box-grey p-[10px] md:py-[7px] md:p-[5px] border-[0.4px] border-forms-border rounded-none'
           >
             {pickUpLocations.map((location, index) => (
               <option key={index} value={location.label}>{`${location.label} - ${location.cost} PLN`}</option>
@@ -187,7 +187,7 @@ const PricesForm: React.FC<PricesFormProps> = ({
         </div>
 
         {/* Days */}
-        <div className="mt-[10px] flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-normal font-bold text-yellow">
+        <div className="mt-[20px] flex flex-row justify-between py-[7px] border-t-[0.4px] border-forms-border text-[14px] font-normal font-bold text-yellow">
           <strong className='text-[14px] font-normal text-white'>Days</strong> {calculateDaysDifference(selectedPickUpDateTime, selectedReturnDateTime)}
         </div>
 
