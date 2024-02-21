@@ -15,6 +15,7 @@ import CarBooking from "./pages/CarBooking";
 import RentalWithDriver from "./pages/RentalWithDriver";
 import SingleCar from "./pages/SingleCar";
 import PageLoader from "./components/Preloader/PageLoader";
+import Limo from "./pages/Limo";
 
 interface CarType {
   id?: string;
@@ -63,6 +64,7 @@ function App() {
             <Route path="/our-fleet" element={<OurFleet />} />
             <Route path="/rent-with-driver" element={<RentalWithDriver />} />
             <Route path="/special-offer" element={<SpecialOffer />} />
+            <Route path="/services" element={<Limo />} />
             <Route path="/contact" element={<Contact />} />
             {cars.map((car) => (
               <Route key={car.id} path={`${car.pageUrl}`} element={<SingleCar carId={car.carId} />} />

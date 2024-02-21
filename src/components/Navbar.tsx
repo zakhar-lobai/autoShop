@@ -12,7 +12,7 @@ const Navbar = () => {
     { name: "Our fleet", link: "/our-fleet" },
     { name: "Rental with a driver", link: "/rent-with-driver" },
     { name: "Special offers", link: "/special-offer" },
-    { name: "Services", link: "/" },
+    { name: "Services", link: "/services" },
     { name: "Contact", link: "/contact" },
   ];
 

@@ -140,7 +140,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
                         type="text"
                         id="lastName"
                         name="lastName"
-                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white focus:rounded-none focus:border-none focus:bg-base mb-[3px]"
+                        className="bg-form-bg h-[40px] pl-[5px] focus:border-[1px] focus:border-white rounded-none focus:border-none focus:bg-base mb-[3px]"
                       />
                       <ErrorMessage
                         name="lastName"
