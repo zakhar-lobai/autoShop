@@ -65,6 +65,9 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "node": "24.x"
+  },
   "devDependencies": {
     "@babel/core": "^7.22.20",
     "@babel/preset-env": "^7.22.20",
