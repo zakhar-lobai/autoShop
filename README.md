@@ -1,51 +1,79 @@
-# Getting Started with Create React App
-node version - v16.17.1
+# AutoShop Monorepo (Web + Mobile)
 
-To setup this project please use:
+This repository contains two client apps:
+- `web/` — React web app (CRA) deployable to Vercel.
+- `mobile/` — Expo / React Native app targeting iOS (App Store) and Android (Play Store).
+- `backend/` — server code or APIs you host; keep all secrets there (never in the apps).
 
-### `npm install`
+The project is set up with security-first defaults: no API keys or secrets are committed, and both apps load their configuration from environment variables.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Security Checklist (do this before pushing)
+- Never commit `.env` files. Use the provided `*.env.example` templates and store real values in Vercel / EAS secrets or local untracked files.
+- Rotate any Firebase/API keys that were previously committed (we removed tracked `.env` files in this update).
+- Keep all private endpoints behind authenticated APIs; only expose public, rate-limited endpoints to the clients.
+- For Firebase: enforce Firestore/Storage rules and restrict API keys to allowed domains/package names/signing certificates.
+- Treat `EXPO_PUBLIC_*` variables as public (they are embedded at build time); keep true secrets on the server.
 
-## Available Scripts
+## Prerequisites
+- Node.js 18+ and npm 9+ (for both web and mobile)
+- Expo CLI (`npm install -g expo-cli`) and EAS CLI (`npm install -g eas-cli`) for native builds
+- A Vercel account (for web) and Apple/Google developer accounts (for store submission)
 
-In the project directory, you can run:
+## Environment Variables
+Create `.env` files locally from the templates:
+- Web: `cp web/.env.example web/.env`
+- Mobile: `cp mobile/.env.example mobile/.env`
 
-### `npm start`
+Required keys (set them in Vercel and EAS/Expo as project secrets):
+- Firebase (web): `FIREBASE_API_KEY`, `FIREBASE_AUTH_DOMAIN`, `FIREBASE_DATABASE_URL`, `FIREBASE_PROJECT_ID`, `FIREBASE_STORAGE_BUCKET`, `FIREBASE_MESSAGING_SENDER_ID`, `FIREBASE_APP_ID`, `FIREBASE_MEASUREMENT_ID`
+- API endpoints (web): `REACT_APP_BOOKING_ENDPOINT`, `REACT_APP_API_BASE`
+- API endpoints (mobile): `EXPO_PUBLIC_BOOKING_ENDPOINT`, `EXPO_PUBLIC_BOOKING_API_URL`, `EXPO_PUBLIC_CONTACT_ENDPOINT`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Local Development
+### Web
+```bash
+cd web
+npm install
+npm start   # runs on http://localhost:3000
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Mobile (Expo)
+```bash
+cd mobile
+npm install
+npx expo start       # press i for iOS Simulator, a for Android emulator, or use Expo Go
+```
 
-### `npm test`
+## Production Builds
+### Web → Vercel
+1) In Vercel, create a project pointing to the `web` folder (root: `web/`).
+2) Set environment variables in the Vercel dashboard (same keys as above).
+3) Build command: `npm run build`; Output directory: `build`.
+4) Use Node 18 runtime in Vercel settings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Mobile → App Store / Play Store (EAS)
+1) Login and configure EAS: `eas login`.
+2) Set secrets (do **not** commit): `eas secret:create --name EXPO_PUBLIC_BOOKING_ENDPOINT --value https://api.your-domain.com/api/reservations` (repeat for other keys).
+3) Android release build: `npx eas build -p android --profile production`.
+4) iOS release build: `npx eas build -p ios --profile production`.
+5) Submit artifacts:
+   - Android: `npx eas submit -p android --latest`.
+   - iOS: `npx eas submit -p ios --latest`.
+6) Prepare store listings (icons, screenshots, privacy policy, content ratings).
 
-### `npm run build`
+## Hardening Tips
+- Enforce HTTPS everywhere and HSTS on your API domain.
+- Add rate limiting, input validation, and auth to backend endpoints.
+- Enable minification/obfuscation for mobile builds (handled by Expo production builds).
+- Monitor with crash reporting/analytics configured via environment (kept private).
+- Regularly audit dependencies (`npm audit`, `npx expo doctor`).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Repository Structure
+- `web/` — React app with CRA, ready for Vercel.
+- `mobile/` — Expo app using file-based routing via `expo-router`.
+- `backend/` — place server/API code; expose only necessary routes to the clients.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Quick Troubleshooting
+- Blank API responses: verify the `*_ENDPOINT` env vars in Vercel/EAS and that CORS allows your domains.
+- Firebase errors: confirm the keys match the project and that Firestore/Storage rules permit the requested operations.
+- Expo build failures: run `npx expo doctor` and ensure all secrets are set via `eas secret:list`.
